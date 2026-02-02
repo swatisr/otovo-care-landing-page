@@ -1,7 +1,7 @@
 /* Hero Typography & Hierarchy - Mill Style */
 
 .hero-content {
-    max-width: 600px; /* Reduced by ~1/6th from 728px */
+    max-width: 600px;
     padding-top: 0;
     display: flex;
     flex-direction: column;
@@ -188,9 +188,9 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end; /* Align content to bottom */
     align-items: flex-start; /* Left align items */
-    padding: 0 64px;
+    padding: 0 64px 80px 64px; /* Generous padding */
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
@@ -207,26 +207,30 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     letter-spacing: 1px;
 }
 
-/* Trust Bar - Left Aligned */
+/* Trust Bar - Bottom Right Desktop */
 .trust-bar {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 24px 64px; /* Match container padding */
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    bottom: 64px; /* Align with content bottom padding */
+    right: 64px;
+    left: auto;
+    width: auto;
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.1); /* Subtle background */
+    backdrop-filter: blur(8px);
+    border-radius: 8px;
+    z-index: 10;
 }
 
 .trust-container {
-    max-width: 1440px;
-    margin: 0 auto;
+    max-width: none;
+    margin: 0;
 }
 
 .trust-content {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Left align */
-    gap: 24px;
+    justify-content: center;
+    gap: 16px;
 }
 .stars { color: #00b67a; letter-spacing: 2px; }
 .customer-count { color: #fff; font-size: 14px; letter-spacing: 0.14px; }
@@ -452,8 +456,29 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 }
 
 @media (max-width: 768px) {
-    .trust-bar { position: relative; background: #101932; }
-    .trust-content { flex-wrap: wrap; }
+    .hero-container {
+        padding: 0 24px 120px 24px; /* More bottom padding for mobile layout */
+        justify-content: flex-end;
+    }
+
+    .trust-bar { 
+        position: absolute; 
+        bottom: 24px; 
+        left: 24px; 
+        right: 24px; 
+        width: auto; 
+        background: transparent; 
+        backdrop-filter: none;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .trust-content { 
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+
     .nav-menu { display: none; }
     
     .benefits-section {
