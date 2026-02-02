@@ -54,13 +54,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const quoteElement = document.getElementById('showcase-quote');
     const authorElement = document.getElementById('showcase-author');
-    const linkElement = document.getElementById('showcase-link');
     const navFlags = document.querySelectorAll('.nav-flag');
     const metaElement = document.querySelector('.showcase-meta');
+    let currentIndex = 0;
+    let autoRotateInterval;
 
     function updateTestimonial(index) {
+        // If content is missing, don't run
+        if (!quoteElement || !authorElement) return;
+
         const data = testimonials[index];
         
+        // Update active flag visual
+        navFlags.forEach(f => f.classList.remove('active'));
+        if (navFlags[index]) navFlags[index].classList.add('active');
+
         // Add fade out class
         quoteElement.classList.add('fade-out');
         metaElement.classList.add('fade-out');
@@ -69,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update content
             quoteElement.textContent = data.quote;
             authorElement.textContent = data.author;
-            linkElement.textContent = `Read why customers in ${data.country} choose Otovo Care →`;
+            // Link element was removed, so we skip updating it
             
             // Remove fade out and add fade in
             quoteElement.classList.remove('fade-out');
@@ -81,33 +89,67 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(() => {
                 quoteElement.classList.remove('fade-in');
                 metaElement.classList.remove('fade-in');
-            }, 300);
-        }, 200);
+            }, 800); // Match CSS transition duration
+        }, 800); // Wait for fade out to complete
+    }
+
+    function startAutoRotate() {
+        // Clear any existing interval to avoid duplicates
+        if (autoRotateInterval) clearInterval(autoRotateInterval);
+        
+        autoRotateInterval = setInterval(() => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateTestimonial(currentIndex);
+        }, 5000); // Change every 5 seconds
+    }
+
+    function resetAutoRotate() {
+        clearInterval(autoRotateInterval);
+        startAutoRotate();
     }
 
     if (quoteElement && authorElement && navFlags.length > 0) {
+        // Initial start
+        startAutoRotate();
+
         navFlags.forEach(flag => {
-            // Desktop Hover
-            flag.addEventListener('mouseenter', () => {
-                // Remove active class from all
-                navFlags.forEach(f => f.classList.remove('active'));
-                // Add active class to hovered
-                flag.classList.add('active');
-
-                const index = parseInt(flag.getAttribute('data-index'));
-                updateTestimonial(index);
-            });
-
-            // Mobile Tap / Click
+            // Handle click (works for both desktop and mobile as explicit intent)
             flag.addEventListener('click', () => {
-                // Remove active class from all
-                navFlags.forEach(f => f.classList.remove('active'));
-                // Add active class to clicked
-                flag.classList.add('active');
-
                 const index = parseInt(flag.getAttribute('data-index'));
+                currentIndex = index;
                 updateTestimonial(index);
+                resetAutoRotate(); // Restart timer on manual interaction
             });
         });
     }
+
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    
+    faqItems.forEach(item => {
+        const card = item.querySelector('.faq-card');
+        const answer = item.querySelector('.faq-answer');
+        const icon = item.querySelector('.faq-icon');
+        
+        card.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                const otherAnswer = otherItem.querySelector('.faq-answer');
+                if (otherAnswer) {
+                    otherAnswer.style.display = 'none';
+                }
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                item.classList.add('active');
+                if (answer) {
+                    answer.style.display = 'block';
+                }
+            }
+        });
+    });
 });
