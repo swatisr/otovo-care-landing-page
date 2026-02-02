@@ -120,7 +120,7 @@
 body { font-family: var(--font-family); color: var(--primary-color); line-height: 1.5; background-color: #fff; -webkit-font-smoothing: antialiased; padding-top: 0; }
 
 /* Navbar */
-.navbar { position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height); background-color: transparent !important; padding: 0 24px; z-index: 1000; border-bottom: none; display: flex; align-items: center; transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+.navbar { position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height); background-color: transparent !important; padding: 0 24px; z-index: 1000; border-bottom: none; display: flex; align-items: center; transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; }
 .navbar.scrolled { background-color: transparent !important; border-bottom: none; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 .navbar.nav-hidden { transform: translateY(-100%); }
 
@@ -322,16 +322,16 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 /* Trust Bar - Bottom Right Desktop */
 .trust-bar {
     position: absolute;
-    bottom: 64px; /* Align with content bottom padding */
+    bottom: 64px;
     right: 64px;
     left: auto;
     width: auto;
-    padding: 8px 12px; /* Reduced padding by half */
-    background: rgba(255, 255, 255, 0.1); /* Subtle background */
+    padding: 16px 24px;
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
-    border-radius: 8px;
+    border-radius: 12px;
     z-index: 10;
-    font-size: 13px; /* Reduced font size */
+    font-size: 16px;
 }
 
 .trust-container {
@@ -343,11 +343,11 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
+    gap: 24px;
 }
-.stars { color: #00b67a; letter-spacing: 2px; font-size: 13px; }
-.customer-count { color: #fff; font-size: 13px; letter-spacing: 0.14px; }
-.trustpilot-logo { display: flex; align-items: center; gap: 4px; color: #fff; font-size: 13px; }
+.stars { color: #00b67a; letter-spacing: 2px; font-size: 16px; }
+.customer-count { color: #fff; font-size: 16px; letter-spacing: 0.14px; }
+.trustpilot-logo { display: flex; align-items: center; gap: 8px; color: #fff; font-size: 16px; }
 
 /* Benefits Section */
 .benefits-section {
@@ -402,180 +402,164 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     max-width: 90%;
 }
 
-/* Testimonial Showcase Section - Waymo Style (Left Aligned) */
-.testimonial-showcase-section {
-    padding: 120px 24px;
-    background-color: #1B2438; /* Otovo Primary Dark Blue */
-    color: #fff;
+/* Reviews List Section (Yotpo Style) */
+.reviews-list-section {
+    padding: 100px 24px;
+    background-color: #FFFFFF;
+    color: #1B2438;
     font-family: var(--font-family);
     text-align: left;
 }
 
-.showcase-container {
-    max-width: 1000px;
+.reviews-container {
+    max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Left align */
-    position: relative;
+    display: grid;
+    grid-template-columns: 350px 1fr; /* Left fixed, Right fluid */
+    gap: 64px;
+    align-items: start;
 }
 
-.showcase-header {
-    width: 100%;
-    margin-bottom: 48px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Left align */
+/* Left Column */
+.reviews-summary {
+    position: sticky;
+    top: 120px; /* Adjust based on navbar height */
 }
 
-.showcase-label {
-    font-size: 32px;
-    font-weight: 600;
-    color: #fff;
-    margin: 0 0 8px 0;
-    text-align: left;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
+.trusted-label {
+    margin-bottom: 24px;
 }
 
-.showcase-sublabel {
-    font-size: 18px;
-    font-weight: 400;
-    color: rgba(255, 255, 255, 0.8);
-    margin: 0 0 24px 0;
-    text-align: left;
-}
-
-.showcase-divider {
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.testimonial-content {
-    width: 100%;
-    position: relative;
-    padding-top: 16px;
-    height: 340px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Left align */
-}
-
-.testimonial-text-wrapper {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Left align */
-}
-
-.quote-mark {
-    font-size: 80px;
-    line-height: 0.6;
-    font-family: serif;
-    font-weight: 400;
-    color: #FE8F65; /* Otovo Accent */
-    opacity: 1; /* Higher opacity like screenshot */
-    margin-bottom: 32px;
-    display: block;
-}
-
-.showcase-quote {
-    font-size: 36px; /* Larger like Waymo */
-    font-weight: 400;
-    line-height: 1.3;
-    margin-bottom: 32px;
-    color: #fff;
-    transition: opacity 0.6s ease;
-    max-width: 900px;
-    text-align: left;
-}
-
-.showcase-meta {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: flex-start; /* Left align */
-    transition: opacity 0.6s ease;
-}
-
-.showcase-author {
-    font-family: monospace; /* Tech feel */
-    font-size: 14px;
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-    letter-spacing: 0.05em;
+.label-text {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #4B5563;
     text-transform: uppercase;
-}
-
-/* Navigation Flags */
-.showcase-nav {
-    display: flex;
-    gap: 16px;
-    margin-top: 40px;
-    justify-content: flex-start; /* Left align */
-    align-self: flex-start;
-}
-
-.nav-flag {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    border: 2px solid transparent;
-    background-color: rgba(255, 255, 255, 0.1);
-    font-size: 32px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 0;
+    gap: 4px;
 }
 
-.nav-flag:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
+.reviews-title {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin: 0 0 16px 0;
+    color: #111827;
+    letter-spacing: -0.03em;
 }
 
-.nav-flag.active {
-    border-color: #00D68F; /* Waymo/Active Green Ring */
-    background-color: transparent;
-    transform: scale(1.1);
-    box-shadow: none;
+/* Right Column */
+.reviews-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Spacing between reviews */
+    max-width: 450px; /* Half width as requested */
 }
 
-/* Animation Classes */
-.fade-out {
-    opacity: 0;
+.review-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #E5E7EB;
 }
 
-.fade-in {
-    opacity: 1;
+.review-item:last-child {
+    border-bottom: none;
+}
+
+/* New Review Content Layout: Text -> Stars -> Footer */
+.review-content-wrapper {
+    margin-bottom: 16px;
+}
+
+.review-headline {
+    display: none; /* Hide headline as requested */
+}
+
+.review-body {
+    font-size: 14px; /* Reduced to 14px */
+    line-height: 1.6;
+    color: #111827; /* Darker text */
+    margin: 0;
+    max-width: 100%;
+}
+
+.stars {
+    color: #1B2438; /* Otovo Dark Blue as per screenshot/request interpretation */
+    font-size: 28px; /* Larger stars */
+    letter-spacing: 4px; /* More spacing */
+    margin-bottom: 24px;
+}
+
+.review-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.review-author {
+    font-size: 16px;
+    font-weight: 700; /* Bold Name */
+    color: #111827;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.separator {
+    font-weight: 400;
+    color: #9CA3AF;
+    margin: 0 4px;
+}
+
+.review-source {
+    display: flex;
+    align-items: center;
+}
+
+.source-icon {
+    height: 24px;
+    width: auto;
+    opacity: 0.8;
+}
+
+.google-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Clean up old styles */
+.review-header, .reviewer-profile, .reviewer-avatar, .verified-badge, .review-date {
+    display: none;
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .reviews-container {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .reviews-summary {
+        position: static;
+        text-align: left;
+        border-bottom: 1px solid #E5E7EB;
+        padding-bottom: 32px;
+    }
+}
+
 @media (max-width: 768px) {
-    .testimonial-showcase-section {
-        padding: 80px 24px;
+    .reviews-list-section {
+        padding: 64px 24px;
     }
 
-    .showcase-label {
-        font-size: 28px;
-    }
-
-    .testimonial-content {
-        height: 440px;
-    }
-
-    .showcase-quote {
-        font-size: 24px;
-    }
-    
-    .showcase-nav {
-        margin-top: 24px;
-        flex-wrap: wrap;
+    .reviews-title {
+        font-size: 32px;
     }
 }
 
