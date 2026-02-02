@@ -1,253 +1,47 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-color: #1B2438;
-    --accent-color: #0F8C55; /* Mill Green-ish for CTA based on image, or stick to Otovo Orange if preferred. Sticking to Otovo Orange #FE8F65 for brand consistency unless asked otherwise, but Mill uses green. I'll stick to Otovo accent for now. */
-    --accent-color: #FE8F65;
-    --text-white: #FFFFFF;
-    --text-muted: #E5E7EB; /* Lighter for overlay */
-    --badge-bg: #FFEB8B;
-    --font-family: 'Poppins', sans-serif;
-    --nav-height: 80px;
-}
-
-body {
-    font-family: var(--font-family);
-    color: var(--primary-color);
-    line-height: 1.5;
-    background-color: #fff;
-    -webkit-font-smoothing: antialiased;
-    padding-top: 0;
-}
-
-/* Navbar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--nav-height);
-    background-color: transparent !important;
-    padding: 0 24px;
-    z-index: 1000;
-    border-bottom: none;
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.navbar.scrolled {
-    background-color: #ffffff !important;
-    border-bottom: none;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.nav-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-/* Logo */
-.logo {
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: #ffffff;
-    transition: color 0.3s ease;
-    z-index: 2;
-}
-
-.logo-svg {
-    height: 40px;
-    width: auto;
-}
-
-.logo-path {
-    transition: fill 0.3s ease;
-}
-
-.navbar.scrolled .logo-path {
-    fill: var(--primary-color);
-}
-
-/* Nav Menu - Centered */
-.nav-menu {
-    display: flex;
-    gap: 32px;
-    list-style: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: 0;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: #ffffff;
-    font-weight: 400;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    transition: color 0.3s ease;
-}
-
-.navbar.scrolled .nav-link {
-    color: var(--primary-color);
-}
-
-.nav-link:hover {
-    color: var(--accent-color);
-}
-
-/* Hamburger Menu */
-.hamburger-menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 24px;
-    height: 16px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-left: auto;
-    z-index: 2;
-}
-
-.hamburger-line {
-    width: 100%;
-    height: 2px;
-    background-color: #ffffff;
-    transition: background-color 0.3s ease;
-}
-
-.navbar.scrolled .hamburger-line {
-    background-color: var(--primary-color);
-}
-
-/* Hero Section */
-.hero-section {
-    position: relative;
-    min-height: 100vh; /* Full viewport height for impact */
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Vertical center */
-    align-items: center;
-    overflow: hidden;
-    text-align: center; /* Horizontal center */
-}
-
-.hero-background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-}
-
-.hero-image-placeholder {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('public/image/unspash1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Uniform Dark Overlay - Mill Style */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* Uniform dark overlay */
-}
-
-.hero-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0 24px;
-    max-width: 900px; /* Constrained width for readability */
-    margin: 0 auto;
-    width: 100%;
-    padding-top: var(--nav-height);
-}
+/* Hero Typography & Hierarchy - Mill Style */
 
 .hero-content {
     max-width: 800px;
-    padding-top: 0; /* Centered layout doesn't need top padding offset */
+    padding-top: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.badge-container {
-    margin-bottom: 24px;
-}
-
-.badge {
-    display: inline-block;
-    background-color: var(--badge-bg);
-    color: var(--primary-color);
-    font-size: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    padding: 6px 14px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    box-shadow: none; /* Cleaner look */
-}
-
 .hero-title {
-    font-family: 'Poppins', serif; /* Mill uses serif headlines often, stick to Poppins but lighter/cleaner */
-    font-size: 56px;
-    font-weight: 400; /* Lighter weight for elegance */
-    color: var(--text-white);
+    font-family: 'Playfair Display', serif; /* Elegant Serif */
+    font-size: 64px; /* Desktop Size */
+    font-weight: 400; /* Regular weight, no bold */
     line-height: 1.1;
-    letter-spacing: -1px;
-    margin-bottom: 24px;
-    text-shadow: none; /* Removed text shadow */
+    letter-spacing: -0.02em; /* Slight tightening for display */
+    color: var(--text-white);
+    margin-bottom: 24px; /* Headline -> Paragraph spacing */
+    text-shadow: none;
+    text-align: center;
 }
 
 .hero-description {
-    color: var(--text-white); /* Pure white for contrast */
-    font-size: 20px;
+    font-family: var(--font-family); /* Poppins/Sans-serif for body */
+    font-size: 20px; /* Desktop Size */
     line-height: 1.6;
-    margin-bottom: 40px;
     font-weight: 400;
-    max-width: 640px;
-    text-shadow: none;
+    color: var(--text-white);
+    max-width: 700px; /* Restrained width */
+    margin-bottom: 32px; /* Paragraph -> CTA spacing */
+    text-align: center;
+    opacity: 0.9; /* Slight reduction for hierarchy */
 }
 
 .hero-description p {
     margin-bottom: 0;
 }
 
+/* CTA Container */
 .cta-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    align-items: center; /* Center aligned */
+    align-items: center;
+    gap: 12px; /* CTA -> Microcopy spacing */
     width: 100%;
 }
 
@@ -258,10 +52,11 @@ body {
     gap: 8px;
     background-color: var(--accent-color);
     color: var(--primary-color);
-    font-weight: 600;
-    font-size: 18px;
-    padding: 16px 40px; /* Larger button */
-    border-radius: 50px; /* Rounded pill shape like Mill */
+    font-family: var(--font-family);
+    font-weight: 600; /* Medium-SemiBold */
+    font-size: 16px;
+    padding: 16px 32px; /* Specific padding */
+    border-radius: 50px;
     text-decoration: none;
     transition: transform 0.2s, background-color 0.2s;
     box-shadow: none;
@@ -272,67 +67,95 @@ body {
     background-color: #ff9b75;
 }
 
-.btn-primary .arrow {
-    font-weight: 400;
-    font-size: 20px;
-}
-
 .price-text {
-    color: var(--text-white); /* White for visibility on overlay */
+    color: var(--text-white);
+    font-family: var(--font-family);
     font-size: 14px;
     line-height: 1.5;
-    opacity: 0.9;
+    opacity: 0.8; /* Reduced emphasis */
+    font-weight: 400;
 }
+
+/* Responsive Typography */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 48px; /* Tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-container {
+        padding: 0 24px;
+        padding-top: var(--nav-height);
+    }
+    
+    .hero-title {
+        font-size: 36px; /* Mobile */
+        line-height: 1.15;
+    }
+    
+    .hero-description {
+        font-size: 16px; /* Mobile */
+        max-width: 100%;
+    }
+    
+    .btn-primary {
+        width: 100%; /* Full width button on mobile often feels better, but Mill keeps centered. Sticking to centered pill. */
+        width: auto;
+        padding: 14px 28px;
+    }
+}
+
+/* Keep other styles intact, just overriding the hero typography specific section */
+/* Reset and Base Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --primary-color: #1B2438;
+    --accent-color: #FE8F65;
+    --text-white: #FFFFFF;
+    --text-muted: #E5E7EB; 
+    --badge-bg: #FFEB8B;
+    --font-family: 'Poppins', sans-serif;
+    --nav-height: 80px;
+}
+body { font-family: var(--font-family); color: var(--primary-color); line-height: 1.5; background-color: #fff; -webkit-font-smoothing: antialiased; padding-top: 0; }
+
+/* Navbar */
+.navbar { position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height); background-color: transparent !important; padding: 0 24px; z-index: 1000; border-bottom: none; display: flex; align-items: center; transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+.navbar.scrolled { background-color: #ffffff !important; border-bottom: none; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.nav-container { max-width: 1440px; margin: 0 auto; width: 100%; display: flex; justify-content: space-between; align-items: center; position: relative; }
+.logo { text-decoration: none; display: flex; align-items: center; color: #ffffff; transition: color 0.3s ease; z-index: 2; }
+.logo-svg { height: 40px; width: auto; }
+.logo-path { transition: fill 0.3s ease; }
+.navbar.scrolled .logo-path { fill: var(--primary-color); }
+.nav-menu { display: flex; gap: 32px; list-style: none; position: absolute; left: 50%; transform: translateX(-50%); margin: 0; }
+.nav-link { text-decoration: none; color: #ffffff; font-weight: 400; font-size: 16px; display: flex; align-items: center; gap: 4px; transition: color 0.3s ease; }
+.navbar.scrolled .nav-link { color: var(--primary-color); }
+.nav-link:hover { color: var(--accent-color); }
+.hamburger-menu { display: flex; flex-direction: column; justify-content: space-between; width: 24px; height: 16px; background: transparent; border: none; cursor: pointer; padding: 0; margin-left: auto; z-index: 2; }
+.hamburger-line { width: 100%; height: 2px; background-color: #ffffff; transition: background-color 0.3s ease; }
+.navbar.scrolled .hamburger-line { background-color: var(--primary-color); }
+
+/* Hero Section */
+.hero-section { position: relative; min-height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; text-align: center; }
+.hero-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+.hero-image-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('public/image/unspash1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); }
+.hero-container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 0 24px; max-width: 900px; margin: 0 auto; width: 100%; padding-top: var(--nav-height); }
+.badge-container { margin-bottom: 24px; }
+.badge { display: inline-block; background-color: var(--badge-bg); color: var(--primary-color); font-size: 12px; font-weight: 600; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; letter-spacing: 0.5px; box-shadow: none; }
 
 /* Trust Bar */
-.trust-bar {
-    background-color: transparent; /* Cleaner look, or keep dark if preferred. Let's keep dark for now or remove if Mill doesn't have it. Mill usually puts logos in a section below. Keeping it fixed at bottom or relative. */
-    /* Let's make it relative below hero content for centering flow */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 24px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); /* Subtle gradient at bottom for trust bar readability */
-}
+.trust-bar { position: absolute; bottom: 0; left: 0; width: 100%; padding: 24px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
+.trust-container { max-width: 1440px; margin: 0 auto; }
+.trust-content { display: flex; align-items: center; justify-content: center; gap: 24px; }
+.stars { color: #00b67a; letter-spacing: 2px; }
+.customer-count { color: #fff; font-size: 14px; letter-spacing: 0.14px; }
+.trustpilot-logo { display: flex; align-items: center; gap: 4px; color: #fff; }
 
-.trust-container {
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
-.trust-content {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centered */
-    gap: 24px;
-}
-
-.stars {
-    color: #00b67a;
-    letter-spacing: 2px;
-}
-
-.customer-count {
-    color: #fff;
-    font-size: 14px;
-    letter-spacing: 0.14px;
-}
-
-.trustpilot-logo {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: #fff;
-}
-
-/* Responsive */
+/* Responsive Trust Bar */
 @media (max-width: 768px) {
-    .navbar { padding: 0 24px; }
-    .nav-menu { display: none; } 
-    .hero-container { padding: 0 24px; padding-top: var(--nav-height); }
-    .hero-title { font-size: 36px; }
-    .hero-description { font-size: 18px; }
-    .trust-bar { position: relative; background: #101932; } /* Static on mobile */
+    .trust-bar { position: relative; background: #101932; }
     .trust-content { flex-wrap: wrap; }
+    .nav-menu { display: none; }
 }
