@@ -10,9 +10,9 @@
 
 .hero-title {
     font-family: var(--font-family); /* Poppins */
-    font-size: 64px; /* Desktop Size */
-    font-weight: 600; /* SemiBold for authority */
-    line-height: 1.1;
+    font-size: 64px; /* Desktop Size: 56-64px */
+    font-weight: 500; /* Regular/Medium (No bold) */
+    line-height: 1.15;
     letter-spacing: -0.02em; /* Slight tightening for display */
     color: var(--text-white);
     margin-bottom: 24px; /* Headline -> Paragraph spacing */
@@ -22,11 +22,11 @@
 
 .hero-description {
     font-family: var(--font-family); /* Poppins/Sans-serif for body */
-    font-size: 20px; /* Desktop Size */
+    font-size: 18px; /* Desktop Size: 17-18px */
     line-height: 1.6;
     font-weight: 400;
     color: var(--text-white);
-    max-width: 600px; /* Restrained width */
+    max-width: 480px; /* Max width: 420-480px */
     margin-bottom: 32px; /* Paragraph -> CTA spacing */
     text-align: left; /* Left align */
     opacity: 0.9; /* Slight reduction for hierarchy */
