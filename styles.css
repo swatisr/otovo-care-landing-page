@@ -137,21 +137,65 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 .navbar.scrolled .hamburger-line { background-color: var(--primary-color); }
 
 /* Hero Section */
-.hero-section { position: relative; min-height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; text-align: center; }
-.hero-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+.hero-section {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
 .hero-video {
     position: absolute;
     top: 50%;
     left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    width: 100%;
+    height: 100%;
     transform: translate(-50%, -50%);
-    object-fit: cover;
+    object-fit: cover; /* Ensures edge-to-edge coverage */
 }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); }
-.hero-container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 0 24px; max-width: 900px; margin: 0 auto; width: 100%; padding-top: var(--nav-height); }
+
+/* Uniform Dark Overlay - Increased Opacity for Mill Style */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Stronger uniform overlay */
+    z-index: 1; /* Above video, below content */
+}
+
+.hero-container {
+    position: relative;
+    z-index: 2; /* Above overlay */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 24px;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+    padding-top: var(--nav-height);
+}
 .badge-container { margin-bottom: 24px; }
 .badge { display: inline-block; background-color: var(--badge-bg); color: var(--primary-color); font-size: 12px; font-weight: 600; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; letter-spacing: 0.5px; box-shadow: none; }
 
