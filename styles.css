@@ -179,6 +179,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     .f-brand-tagline { display: none; } /* Simplify brand on mobile */
     .floating-menu { gap: 0; }
 }
+.navbar.nav-hidden { transform: translateY(-100%); }
 
 /* Floating Navbar (Scroll) - Mill Style Pill with Otovo Colors */
 .floating-nav {
@@ -248,7 +249,43 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 .hamburger-line { width: 100%; height: 2px; background-color: #ffffff; transition: background-color 0.3s ease; }
 .navbar.scrolled .hamburger-line { background-color: var(--primary-color); }
 
-/* Hero Section */
+/* Value Prop Banner */
+.value-prop-banner {
+    background-color: #1B2438; /* Dark background like reference */
+    color: #fff;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.value-prop-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.value-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .value-prop-banner {
+        flex-direction: column;
+        gap: 12px;
+        padding: 24px;
+        text-align: center;
+    }
+}
 .hero-section {
     position: relative;
     min-height: 100vh;
@@ -402,147 +439,135 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     max-width: 90%;
 }
 
-/* Testimonial Showcase Section */
+/* Testimonial Showcase Section - Waymo Style (Left Aligned) */
 .testimonial-showcase-section {
     padding: 120px 24px;
-    background-color: #0056F5; /* Waymo-like bright blue to match screenshot */
+    background-color: #1B2438; /* Otovo Primary Dark Blue */
     color: #fff;
     font-family: var(--font-family);
+    text-align: left;
 }
 
 .showcase-container {
-    max-width: 800px; /* Tighter container */
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Left align everything */
+    align-items: flex-start; /* Left align */
     position: relative;
 }
 
 .showcase-header {
     width: 100%;
     margin-bottom: 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Left align */
 }
 
 .showcase-label {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 32px;
+    font-weight: 600;
     color: #fff;
-    margin: 0 0 16px 0;
+    margin: 0 0 8px 0;
     text-align: left;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+
+.showcase-sublabel {
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 24px 0;
+    text-align: left;
 }
 
 .showcase-divider {
     width: 100%;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .testimonial-content {
     width: 100%;
     position: relative;
     padding-top: 16px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Left align */
 }
 
 .testimonial-text-wrapper {
     position: relative;
     z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Left align */
 }
 
 .quote-mark {
-    font-size: 60px;
-    line-height: 1;
-    font-family: sans-serif; /* Geometric quote mark */
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 24px;
+    font-size: 80px;
+    line-height: 0.6;
+    font-family: serif;
+    font-weight: 400;
+    color: #FE8F65; /* Otovo Accent */
+    opacity: 1; /* Higher opacity like screenshot */
+    margin-bottom: 32px;
     display: block;
 }
 
 .showcase-quote {
-    font-size: 32px; /* Large readable text */
+    font-size: 36px; /* Larger like Waymo */
     font-weight: 400;
-    line-height: 1.4;
+    line-height: 1.3;
     margin-bottom: 32px;
     color: #fff;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    max-width: 90%;
+    transition: opacity 0.6s ease;
+    max-width: 900px;
+    text-align: left;
 }
 
 .showcase-meta {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    align-items: flex-start;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    gap: 8px;
+    align-items: flex-start; /* Left align */
+    transition: opacity 0.6s ease;
 }
 
 .showcase-author {
-    font-family: monospace; /* Tech/SaaS feel like screenshot */
+    font-family: monospace; /* Tech feel */
     font-size: 14px;
-    font-weight: 500;
-    color: #fff;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-}
-
-.showcase-link {
-    color: #fff;
-    text-decoration: none;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    transition: opacity 0.2s;
-    font-weight: 400;
-}
-
-.showcase-link:hover {
-    text-decoration: underline;
-}
-
-.showcase-link::before {
-    content: '→';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #fff;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    font-size: 16px;
-    padding-bottom: 2px; /* Visual center adjustment */
-    transition: background-color 0.2s, color 0.2s;
-}
-
-.showcase-link:hover::before {
-    background-color: #fff;
-    color: #0056F5;
 }
 
 /* Navigation Flags */
 .showcase-nav {
     display: flex;
-    gap: 12px;
-    margin-top: 80px; /* Space from content */
-    align-self: flex-start; /* Left align like content, or center? Screenshot has them centered relative to content? Looks centered under content block. */
-    margin-left: 0; 
+    gap: 16px;
+    margin-top: 40px;
+    justify-content: flex-start; /* Left align */
+    align-self: flex-start;
 }
 
 .nav-flag {
-    width: 48px;
-    height: 48px;
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
-    border: 2px solid transparent; /* Prepare for border */
+    border: 2px solid transparent;
     background-color: rgba(255, 255, 255, 0.1);
-    font-size: 24px;
+    font-size: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.3s ease;
     padding: 0;
 }
 
@@ -552,26 +577,33 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 }
 
 .nav-flag.active {
-    border-color: #00D68F; /* Bright teal/green ring */
+    border-color: #00D68F; /* Waymo/Active Green Ring */
     background-color: transparent;
-    box-shadow: 0 0 0 2px #0056F5 inset; /* Gap effect */
+    transform: scale(1.1);
+    box-shadow: none;
 }
 
 /* Animation Classes */
 .fade-out {
     opacity: 0;
-    transform: translateY(-10px);
 }
 
 .fade-in {
     opacity: 1;
-    transform: translateY(0);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .testimonial-showcase-section {
-        padding: 64px 24px;
+        padding: 80px 24px;
+    }
+
+    .showcase-label {
+        font-size: 28px;
+    }
+
+    .testimonial-content {
+        height: 440px;
     }
 
     .showcase-quote {
@@ -579,7 +611,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     }
     
     .showcase-nav {
-        margin-top: 48px;
+        margin-top: 24px;
         flex-wrap: wrap;
     }
 }
