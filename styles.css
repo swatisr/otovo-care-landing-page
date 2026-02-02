@@ -1,11 +1,11 @@
 /* Hero Typography & Hierarchy - Mill Style */
 
 .hero-content {
-    max-width: 700px;
+    max-width: 728px;
     padding-top: 0;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align */
+    align-items: flex-start; /* Left align */
 }
 
 .hero-title {
@@ -17,7 +17,7 @@
     color: var(--text-white);
     margin-bottom: 24px; /* Headline -> Paragraph spacing */
     text-shadow: none;
-    text-align: center; /* Center align */
+    text-align: left; /* Left align */
 }
 
 .hero-description {
@@ -26,9 +26,9 @@
     line-height: 1.6;
     font-weight: 400;
     color: var(--text-white);
-    max-width: 700px; /* Restrained width */
+    max-width: 728px; /* Restrained width */
     margin-bottom: 32px; /* Paragraph -> CTA spacing */
-    text-align: center; /* Center align */
+    text-align: left; /* Left align */
     opacity: 0.9; /* Slight reduction for hierarchy */
 }
 
@@ -40,7 +40,7 @@
 .cta-container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center align */
+    align-items: flex-start; /* Left align */
     gap: 12px; /* CTA -> Microcopy spacing */
     width: 100%;
 }
@@ -144,9 +144,9 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center align */
+    align-items: flex-start; /* Left align */
     overflow: hidden;
-    text-align: center; /* Center align text */
+    text-align: left; /* Left align text */
     margin: 0;
     padding: 0;
 }
@@ -189,7 +189,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center; /* Center align items */
+    align-items: flex-start; /* Left align items */
     padding: 0 64px;
     max-width: 1440px;
     margin: 0 auto;
@@ -225,7 +225,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 .trust-content {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center align */
+    justify-content: flex-start; /* Left align */
     gap: 24px;
 }
 .stars { color: #00b67a; letter-spacing: 2px; }
@@ -288,7 +288,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 /* Comparison Section */
 .comparison-section {
     padding: 100px 24px;
-    background-color: #F9FAFB; /* Clean, bright background */
+    background-color: #fff; /* Changed to white or very light to match image */
     color: var(--primary-color);
 }
 
@@ -313,24 +313,28 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 }
 
 .comparison-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    background: transparent; /* Card itself transparent, content is what matters? Image shows clean layout */
+    /* Actually the image shows no visible border or shadow around the card container, just the image and text below. */
+    /* Let's remove the card background and shadow to match the clean look */
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
     display: flex;
     flex-direction: column;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .comparison-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    box-shadow: none;
 }
 
 .card-image-wrapper {
-    height: 200px;
+    height: 300px; /* Taller image */
     width: 100%;
     overflow: hidden;
+    border-radius: 12px; /* Rounded corners on image */
+    margin-bottom: 24px;
 }
 
 .card-image {
@@ -341,29 +345,30 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 }
 
 .comparison-card:hover .card-image {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .card-content {
-    padding: 24px;
+    padding: 0; /* Remove padding as card has no border */
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
 .card-title {
-    font-size: 20px;
+    font-size: 24px; /* Larger title */
     font-weight: 600;
     margin-bottom: 12px;
     color: var(--primary-color);
 }
 
 .card-description {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
-    color: #6B7280;
+    color: #4B5563;
     margin-bottom: 24px;
-    flex-grow: 1;
+    flex-grow: 0; /* Don't force growth */
+    min-height: 80px; /* Min height for alignment */
 }
 
 .card-checklist {
@@ -374,57 +379,65 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 
 .card-checklist li {
     display: flex;
-    align-items: center;
+    align-items: center; /* Align check with text */
     gap: 12px;
-    margin-bottom: 12px;
-    font-size: 14px;
-    color: var(--primary-color);
+    margin-bottom: 16px; /* More spacing */
+    font-size: 16px;
+    color: #4B5563; /* Muted text */
 }
 
 .check-icon {
-    color: var(--accent-color);
-    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .card-link {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom-color 0.2s;
-    align-self: flex-start;
+    font-weight: 600;
+    font-size: 18px; /* Larger link */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto; /* Push to bottom */
 }
 
-.card-link:hover {
-    border-bottom-color: var(--primary-color);
+.link-arrow {
+    transition: transform 0.2s ease;
+}
+
+.card-link:hover .link-arrow {
+    transform: translateX(4px);
 }
 
 .comparison-cta-container {
     display: flex;
     justify-content: center;
     width: 100%;
+    margin-top: 48px;
 }
 
-.btn-secondary {
+.btn-block-cta {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent;
-    color: var(--primary-color);
+    background-color: var(--accent-color);
+    color: var(--primary-color); /* Dark text on orange */
     font-family: var(--font-family);
     font-weight: 600;
     font-size: 16px;
-    padding: 14px 32px;
-    border: 2px solid var(--primary-color);
-    border-radius: 50px;
+    padding: 16px 64px; /* Wide padding */
+    min-width: 240px;
+    border-radius: 8px; /* Slightly rounded, not pill */
     text-decoration: none;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s;
+    border: none;
 }
 
-.btn-secondary:hover {
-    background-color: var(--primary-color);
-    color: #fff;
+.btn-block-cta:hover {
+    background-color: #ff9b75;
 }
 
 /* Responsive Styles */
