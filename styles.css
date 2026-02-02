@@ -136,6 +136,62 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 }
 .navbar.nav-hidden { transform: translateY(-100%); }
 .navbar.scrolled { background-color: transparent; }
+
+/* Floating Navbar (Scroll) */
+.floating-nav {
+    position: fixed;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-20px);
+    width: 95%;
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 12px;
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    z-index: 1001;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-nav.visible {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0);
+}
+
+.floating-brand { display: flex; flex-direction: column; }
+.f-brand-name { font-weight: 700; font-size: 16px; color: var(--primary-color); line-height: 1.2; }
+.f-brand-tagline { font-size: 12px; color: #6B7280; line-height: 1.2; font-weight: 400; }
+
+.floating-menu { display: flex; align-items: center; gap: 32px; }
+.f-nav-link { text-decoration: none; color: #4B5563; font-weight: 500; font-size: 14px; transition: color 0.2s; }
+.f-nav-link:hover { color: var(--primary-color); }
+
+.f-btn-cta {
+    background-color: #008060; /* Mill Green style from image */
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+.f-btn-cta:hover { background-color: #006048; }
+
+/* Responsive Floating Nav */
+@media (max-width: 768px) {
+    .f-nav-link { display: none; } /* Hide links on mobile */
+    .f-brand-tagline { display: none; } /* Simplify brand on mobile */
+    .floating-menu { gap: 0; }
+}
 .nav-container { max-width: 1440px; margin: 0 auto; width: 100%; display: flex; justify-content: space-between; align-items: center; position: relative; }
 .logo { text-decoration: none; display: flex; align-items: center; color: #ffffff; transition: color 0.3s ease; z-index: 2; }
 .logo-svg { height: 40px; width: auto; }

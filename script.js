@@ -1,29 +1,24 @@
 // Navbar Scroll Effect
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
-    let lastScrollTop = 0;
+    const floatingNav = document.querySelector('.floating-nav');
     
     window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollTop = window.scrollY;
         
-        // Hide on scroll down, show on scroll up
-        if (scrollTop > lastScrollTop && scrollTop > 50) {
+        // Threshold for switching navbars
+        if (scrollTop > 100) {
+            // Scrolled state: Hide main navbar, show floating navbar
             navbar.classList.add('nav-hidden');
+            floatingNav.classList.add('visible');
         } else {
+            // Top state: Show main navbar, hide floating navbar
             navbar.classList.remove('nav-hidden');
+            floatingNav.classList.remove('visible');
         }
-        
-        // Keep the 'scrolled' class for potential style changes (like more opacity)
-        if (scrollTop > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-        
-        lastScrollTop = scrollTop;
     });
 
-    // Mobile Menu Toggle (placeholder for future implementation)
+    // Mobile Menu Toggle (placeholder)
     // const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     // if (mobileMenuBtn) { ... }
 });
