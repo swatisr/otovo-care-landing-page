@@ -120,22 +120,8 @@
 body { font-family: var(--font-family); color: var(--primary-color); line-height: 1.5; background-color: #fff; -webkit-font-smoothing: antialiased; padding-top: 0; }
 
 /* Navbar */
-.navbar { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: var(--nav-height); 
-    background-color: transparent; 
-    padding: 0 24px; 
-    z-index: 1000; 
-    border-bottom: none; 
-    display: flex; 
-    align-items: center; 
-    transition: transform 0.3s ease, background-color 0.3s ease; 
-}
-.navbar.nav-hidden { transform: translateY(-100%); }
-.navbar.scrolled { background-color: transparent; }
+.navbar { position: fixed; top: 0; left: 0; width: 100%; height: var(--nav-height); background-color: transparent !important; padding: 0 24px; z-index: 1000; border-bottom: none; display: flex; align-items: center; transition: background-color 0.3s ease, box-shadow 0.3s ease; }
+.navbar.scrolled { background-color: #ffffff !important; border-bottom: none; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 
 /* Floating Navbar (Scroll) - Mill Style Pill with Otovo Colors */
 .floating-nav {
@@ -359,246 +345,307 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     max-width: 90%;
 }
 
-/* Comparison Section - Carousel Style */
-.comparison-section {
+/* Testimonial Showcase Section */
+.testimonial-showcase-section {
     padding: 100px 24px;
-    background-color: #fff;
-    color: var(--primary-color);
-    overflow: hidden; /* Hide scrollbar from parent if any */
+    background-color: #1B2438; /* Otovo Primary Dark Blue */
+    color: #fff;
+    text-align: center;
 }
 
-.comparison-container {
-    max-width: 1440px; /* Wider container for carousel */
+.showcase-container {
+    max-width: 1000px;
     margin: 0 auto;
-    position: relative;
-}
-
-.comparison-title {
-    font-size: 48px; /* Larger title like reference */
-    font-weight: 500;
-    margin-bottom: 16px;
-    text-align: center;
-    line-height: 1.1;
-    color: var(--primary-color);
-}
-
-.comparison-subtitle {
-    font-size: 18px;
-    text-align: center;
-    color: #6B7280;
-    max-width: 600px;
-    margin: 0 auto 64px auto;
-}
-
-.carousel-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-.comparison-carousel {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    padding-bottom: 40px; /* Space for scrollbar or shadow */
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-    padding-left: max(24px, calc((100vw - 1200px) / 2)); /* Center starting item roughly */
-    padding-right: 24px;
-}
-
-.comparison-carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.carousel-card {
-    flex: 0 0 340px; /* Fixed width cards */
-    height: 480px; /* Tall cards */
-    border-radius: 24px;
-    overflow: hidden;
-    position: relative;
-    scroll-snap-align: start;
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-.carousel-card:hover {
-    transform: translateY(-4px);
-}
-
-.carousel-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-}
-
-.carousel-content {
-    position: relative;
-    z-index: 2;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    padding: 32px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
-    color: #fff;
+    align-items: center;
+    gap: 64px;
 }
 
-.carousel-card-title {
-    font-size: 20px;
+.showcase-header {
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.showcase-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    margin: 0;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.9;
+    margin-bottom: 16px;
+}
+
+.showcase-divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.testimonial-content {
+    max-width: 800px;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+}
+
+.testimonial-text-wrapper {
+    flex: 1;
+}
+
+.quote-mark {
+    font-size: 80px;
+    line-height: 0.8;
+    font-family: serif;
+    color: #fff;
+    opacity: 0.8;
+    display: block;
+    margin-top: -10px; /* Slight optical adjustment */
+}
+
+.showcase-quote {
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 1.3;
+    margin-bottom: 32px;
+    color: #fff;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.showcase-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.showcase-author {
+    font-size: 16px;
     font-weight: 600;
-    margin-bottom: 12px;
     color: #fff;
-}
-
-.carousel-card-desc {
-    font-size: 15px;
-    line-height: 1.5;
-    color: rgba(255, 255, 255, 0.9);
     margin: 0;
 }
 
-/* Navigation Button */
-.carousel-nav-btn {
-    position: absolute;
-    right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
+.showcase-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.showcase-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* Navigation Flags */
+.showcase-nav {
+    display: flex;
+    gap: 16px;
+    margin-top: 32px;
+    justify-content: center;
+}
+
+.nav-flag {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    background-color: #fff;
     border: none;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: transparent;
+    font-size: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 10;
     transition: transform 0.2s, box-shadow 0.2s;
+    padding: 0;
+    position: relative;
 }
 
-.carousel-nav-btn:hover {
-    transform: translateY(-50%) scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.nav-flag:hover {
+    transform: scale(1.1);
 }
 
-.arrow-icon {
-    font-size: 24px;
-    color: var(--primary-color);
+.nav-flag.active {
+    box-shadow: 0 0 0 3px #10B981; /* Green active ring */
+    transform: scale(1.1);
 }
 
-.comparison-cta-container {
+/* Animation Classes */
+.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .testimonial-content {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .quote-mark {
+        margin-top: 0;
+        font-size: 64px;
+    }
+
+    .showcase-quote {
+        font-size: 24px;
+    }
+    
+    .showcase-nav {
+        flex-wrap: nowrap; /* Horizontal scroll on mobile */
+        overflow-x: auto;
+        justify-content: flex-start;
+        width: 100%;
+        padding-bottom: 16px;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    .showcase-nav::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* Direct Phone Line Section */
+.direct-phone-section {
+    padding: 96px 64px;
+    background-color: #fff;
+}
+
+.direct-phone-container {
+    max-width: 1312px;
+    margin: 0 auto;
+}
+
+.direct-phone-card {
+    background-color: #f0f0f5;
+    border-radius: 6px;
+    padding: 64px;
     display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 48px;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
 }
 
-.btn-block-cta {
+.direct-phone-content {
+    flex: 1;
+    max-width: 421px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.direct-phone-title {
+    font-family: var(--font-family);
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 48px;
+    letter-spacing: -0.03em;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.direct-phone-description {
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #2f3d59;
+    margin: 0;
+}
+
+.btn-get-quote {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     background-color: var(--accent-color);
-    color: var(--primary-color); /* Dark text on orange */
+    color: var(--primary-color);
     font-family: var(--font-family);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
-    padding: 16px 64px; /* Wide padding */
-    min-width: 240px;
-    border-radius: 50px; /* Pill shape like reference */
+    padding: 13px 25px;
+    border-radius: 6px;
     text-decoration: none;
-    transition: background-color 0.2s;
-    border: none;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    width: fit-content;
 }
 
-.btn-block-cta:hover {
+.btn-get-quote:hover {
+    transform: translateY(-2px);
     background-color: #ff9b75;
 }
 
-/* Responsive Styles */
+.direct-phone-image {
+    flex: 1;
+    max-width: 533px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1), 0px 4px 20px 0px rgba(13, 18, 28, 0.1);
+    position: relative;
+}
+
+.direct-phone-image::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(242, 115, 80, 0.05);
+    pointer-events: none;
+    border-radius: 12px;
+}
+
+.direct-phone-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Responsive Direct Phone Section */
 @media (max-width: 1024px) {
-    /* No grid logic here anymore */
+    .direct-phone-card {
+        flex-direction: column;
+        gap: 32px;
+    }
+    
+    .direct-phone-content {
+        max-width: 100%;
+    }
+    
+    .direct-phone-image {
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
-    .hero-container {
-        padding: 0 24px 120px 24px; /* More bottom padding for mobile layout */
-        justify-content: flex-end;
-    }
-
-    .trust-bar { 
-        position: absolute; 
-        bottom: 24px; 
-        left: 24px; 
-        right: 24px; 
-        width: auto; 
-        background: transparent; 
-        backdrop-filter: none;
-        padding: 0;
-        display: flex; 
-        justify-content: center;
-    }
-
-    .trust-content { 
-        flex-wrap: wrap; 
-        justify-content: center;
-    }
-
-    .nav-menu { display: none; }
-    
-    .benefits-section {
+    .direct-phone-section {
         padding: 64px 24px;
     }
     
-    .benefits-title {
+    .direct-phone-card {
+        padding: 32px 24px;
+    }
+    
+    .direct-phone-title {
         font-size: 28px;
-        margin-bottom: 48px;
-        text-align: left;
-    }
-    
-    .benefits-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-    
-    .benefit-description {
-        max-width: 100%;
-    }
-
-    /* Comparison Section Mobile */
-    .comparison-section {
-        padding: 64px 0; /* Remove side padding on mobile for full bleed carousel */
-    }
-
-    .comparison-container {
-        padding: 0;
-    }
-
-    .comparison-title, .comparison-subtitle {
-        padding: 0 24px; /* Add padding back to text */
-    }
-
-    .comparison-title {
-        font-size: 32px;
-        margin-bottom: 16px;
-    }
-    
-    .carousel-card {
-        flex: 0 0 280px;
-        height: 400px;
-    }
-    
-    .comparison-carousel {
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-    
-    .carousel-nav-btn {
-        display: none; /* Hide nav button on mobile, rely on swipe */
+        line-height: 36px;
     }
 }
