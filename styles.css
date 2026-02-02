@@ -137,45 +137,45 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 .navbar.nav-hidden { transform: translateY(-100%); }
 .navbar.scrolled { background-color: transparent; }
 
-/* Floating Navbar (Scroll) */
+/* Floating Navbar (Scroll) - Dark Frosted Full Width */
 .floating-nav {
     position: fixed;
-    top: 24px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-20px);
-    width: 95%;
-    max-width: 900px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 12px;
-    padding: 12px 24px;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    width: 100%;
+    max-width: none;
+    background: rgba(27, 36, 56, 0.9); /* Dark navy frosted (Brand color base) */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-radius: 0;
+    padding: 16px 32px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
     z-index: 1001;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
 .floating-nav.visible {
     opacity: 1;
     pointer-events: all;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
 }
 
 .floating-brand { display: flex; flex-direction: column; }
-.f-brand-name { font-weight: 700; font-size: 16px; color: var(--primary-color); line-height: 1.2; }
-.f-brand-tagline { font-size: 12px; color: #6B7280; line-height: 1.2; font-weight: 400; }
+.f-brand-name { font-weight: 700; font-size: 18px; color: #FFFFFF; line-height: 1.2; }
+.f-brand-tagline { font-size: 12px; color: #9CA3AF; line-height: 1.2; font-weight: 400; }
 
 .floating-menu { display: flex; align-items: center; gap: 32px; }
-.f-nav-link { text-decoration: none; color: #4B5563; font-weight: 500; font-size: 14px; transition: color 0.2s; }
-.f-nav-link:hover { color: var(--primary-color); }
+.f-nav-link { text-decoration: none; color: #E5E7EB; font-weight: 500; font-size: 14px; transition: color 0.2s; }
+.f-nav-link:hover { color: #FFFFFF; }
 
 .f-btn-cta {
-    background-color: #008060; /* Mill Green style from image */
+    background-color: #008060;
     color: #fff;
     padding: 10px 24px;
     border-radius: 50px;
