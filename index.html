@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OtovoCare - Your Trusted Healthcare Partner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <p>This website uses cookies to deliver and enhance the quality of its services. <a href="#">Learn more</a></p>
+            <button class="cookie-btn" id="cookieBtn">OK, got it</button>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <span>OtovoCare</span>
+            </a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#safety">Safety</a></li>
+                <li><a href="#community">Community</a></li>
+                <li><a href="#careers">Careers</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn-primary">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-line">The World's Most</span>
+                <span class="title-line">Trusted Healthcare</span>
+            </h1>
+            <p class="hero-subtitle">
+                We're on a mission to be the world's most trusted healthcare provider. 
+                Making healthcare safer, more accessible, and more sustainable — 
+                without compromising on quality or care.
+            </p>
+            <div class="hero-cta">
+                <a href="#" class="btn-primary btn-large">Get Started</a>
+            </div>
+        </div>
+        <div class="hero-video-container">
+            <div class="hero-video-placeholder">
+                <div class="play-button">
+                    <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                        <circle cx="40" cy="40" r="40" fill="white" opacity="0.9"/>
+                        <path d="M32 26L32 54L54 40L32 26Z" fill="#1B2438"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Section -->
+    <section class="meet-section">
+        <div class="container">
+            <h2 class="section-title">Meet OtovoCare</h2>
+            <p class="section-subtitle">The world's leading healthcare service platform</p>
+            <a href="#" class="link-arrow">Be one of the first <span>→</span></a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#FE8F67" opacity="0.1"/>
+                            <path d="M24 12V24L32 28" stroke="#FE8F67" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-number">20M+</h3>
+                    <p class="feature-label">Patients served</p>
+                    <p class="feature-description">And counting - with a 93% satisfaction rate from our patients.*</p>
+                </div>
+                <div class="feature-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#FE8F67" opacity="0.1"/>
+                            <path d="M16 24L20 28L32 16" stroke="#FE8F67" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">An experience second to none</h3>
+                    <p class="feature-description">Your care, your way - safe, private and sustainable.</p>
+                </div>
+                <div class="feature-card" data-animate>
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="24" fill="#FE8F67" opacity="0.1"/>
+                            <circle cx="24" cy="24" r="10" stroke="#FE8F67" stroke-width="2"/>
+                            <path d="M24 14V24L30 28" stroke="#FE8F67" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Available <span class="highlight">24/7</span></h3>
+                    <p class="feature-description">Day or night, we're here when you need us.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="section-title">Where OtovoCare is serving</h2>
+            <div class="map-container">
+                <div class="map-visual">
+                    <svg viewBox="0 0 800 500" class="world-map">
+                        <!-- Simplified world map paths -->
+                        <path d="M100,200 Q200,150 300,200 T500,200" stroke="#1E40B4" stroke-width="2" fill="none" opacity="0.3"/>
+                        <path d="M200,300 Q300,250 400,300 T600,300" stroke="#1E40B4" stroke-width="2" fill="none" opacity="0.3"/>
+                        <!-- Location markers -->
+                        <circle cx="150" cy="180" r="8" fill="#FE8F67" class="location-marker" data-location="New York"/>
+                        <circle cx="250" cy="200" r="8" fill="#FE8F67" class="location-marker" data-location="London"/>
+                        <circle cx="350" cy="220" r="8" fill="#FE8F67" class="location-marker" data-location="Tokyo"/>
+                        <circle cx="450" cy="190" r="8" fill="#FE8F67" class="location-marker" data-location="Sydney"/>
+                        <circle cx="550" cy="210" r="8" fill="#FE8F67" class="location-marker" data-location="Dubai"/>
+                    </svg>
+                </div>
+                <div class="locations-list">
+                    <div class="location-category">
+                        <h3>Serving Patients In</h3>
+                        <ul>
+                            <li>New York, NY</li>
+                            <li>London, UK</li>
+                            <li>Tokyo, Japan</li>
+                            <li>Sydney, Australia</li>
+                            <li>Dubai, UAE</li>
+                        </ul>
+                    </div>
+                    <div class="location-category">
+                        <h3>Up Next</h3>
+                        <ul>
+                            <li>Paris, France</li>
+                            <li>Berlin, Germany</li>
+                            <li>Singapore</li>
+                            <li>Toronto, Canada</li>
+                            <li>Mumbai, India</li>
+                        </ul>
+                    </div>
+                    <div class="location-category">
+                        <h3>Expanding To</h3>
+                        <ul>
+                            <li>Barcelona, Spain</li>
+                            <li>Amsterdam, Netherlands</li>
+                            <li>Stockholm, Sweden</li>
+                            <li>Melbourne, Australia</li>
+                            <li>Seoul, South Korea</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Why they choose OtovoCare</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-animate>
+                    <blockquote>
+                        <p>"The fact that OtovoCare provides convenience, prioritizes safety, and is committed to sustainability makes it by far my favorite healthcare provider."</p>
+                        <footer>
+                            <strong>Sarah, New York</strong>
+                        </footer>
+                    </blockquote>
+                    <a href="#" class="testimonial-link">Learn why Sarah chooses OtovoCare</a>
+                </div>
+                <div class="testimonial-card" data-animate>
+                    <blockquote>
+                        <p>"I like being able to relax, not worry about having a stressful healthcare experience, and not having to question the provider's decision-making abilities."</p>
+                        <footer>
+                            <strong>Michael, London</strong>
+                        </footer>
+                    </blockquote>
+                    <a href="#" class="testimonial-link">Check out why Michael prefers OtovoCare</a>
+                </div>
+                <div class="testimonial-card" data-animate>
+                    <blockquote>
+                        <p>"It worked so well that instead of making one visit to prove a point, I decided to replace some of my weekly healthcare visits with OtovoCare."</p>
+                        <footer>
+                            <strong>Emma, Tokyo</strong>
+                        </footer>
+                    </blockquote>
+                    <a href="#" class="testimonial-link">Learn why Emma chooses OtovoCare</a>
+                </div>
+                <div class="testimonial-card" data-animate>
+                    <blockquote>
+                        <p>"My experiences with OtovoCare are consistently safe. It is almost as if I visit the exact same provider each time."</p>
+                        <footer>
+                            <strong>David, Sydney</strong>
+                        </footer>
+                    </blockquote>
+                    <a href="#" class="testimonial-link">Hear more about David's experiences</a>
+                </div>
+                <div class="testimonial-card" data-animate>
+                    <blockquote>
+                        <p>"It gives me, a person with disabilities, the opportunity to access healthcare with the same spontaneity, the same independence, and the same autonomy as everyone else."</p>
+                        <footer>
+                            <strong>Lisa, Dubai</strong>
+                        </footer>
+                    </blockquote>
+                    <a href="#" class="testimonial-link">Hear how Lisa accesses care with OtovoCare</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology-section">
+        <div class="container">
+            <div class="tech-content">
+                <div class="tech-text">
+                    <h2 class="section-title">OtovoCare Platform</h2>
+                    <h3 class="tech-subtitle">Meet the technology behind it all</h3>
+                    <p class="tech-description">
+                        We're designing the OtovoCare Platform, our advanced healthcare technology, 
+                        to give people a new kind of freedom — to access care where they want, 
+                        when they want, while making the frustrations and concerns with traditional 
+                        healthcare a thing of the past.
+                    </p>
+                    <a href="#" class="link-arrow">Explore the OtovoCare Platform <span>→</span></a>
+                </div>
+                <div class="tech-visual">
+                    <div class="tech-image-placeholder">
+                        <div class="animated-shapes">
+                            <div class="shape shape-1"></div>
+                            <div class="shape shape-2"></div>
+                            <div class="shape shape-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why We're Here Section -->
+    <section class="why-section">
+        <div class="container">
+            <h2 class="section-title">Why we're here</h2>
+            <div class="stats-grid">
+                <div class="stat-card" data-animate>
+                    <div class="stat-number">1.19 million</div>
+                    <div class="stat-label">deaths worldwide due to preventable healthcare issues every year</div>
+                </div>
+                <div class="stat-card" data-animate>
+                    <div class="stat-number">42,514</div>
+                    <div class="stat-label">healthcare-related deaths in the U.S. in 2022</div>
+                </div>
+                <div class="stat-card" data-animate>
+                    <div class="stat-number">$836B</div>
+                    <div class="stat-label">in harm from loss of life and injury each year</div>
+                </div>
+            </div>
+            <div class="comparison-section">
+                <h3 class="comparison-title">Compared to traditional healthcare providers, OtovoCare has:</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card" data-animate>
+                        <div class="comparison-number">
+                            <span class="number">90</span>
+                            <span class="percent">%</span>
+                        </div>
+                        <div class="comparison-label">Fewer serious complications</div>
+                        <div class="comparison-detail">27 fewer</div>
+                    </div>
+                    <div class="comparison-card" data-animate>
+                        <div class="comparison-number">
+                            <span class="number">82</span>
+                            <span class="percent">%</span>
+                        </div>
+                        <div class="comparison-label">Fewer emergency interventions</div>
+                        <div class="comparison-detail">173 fewer</div>
+                    </div>
+                    <div class="comparison-card" data-animate>
+                        <div class="comparison-number">
+                            <span class="number">81</span>
+                            <span class="percent">%</span>
+                        </div>
+                        <div class="comparison-label">Fewer injury-causing incidents</div>
+                        <div class="comparison-detail">411 fewer</div>
+                    </div>
+                </div>
+                <a href="#" class="link-arrow">Explore more in our safety dashboard <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety Commitment Section -->
+    <section class="safety-section">
+        <div class="container">
+            <h2 class="section-title">Our commitment to safety</h2>
+            <p class="safety-description">
+                Healthcare means nothing without safe practices. Our priority is to ensure 
+                the OtovoCare Platform offers a safe healthcare experience for those we serve — 
+                and everyone in our community.
+            </p>
+            <a href="#" class="link-arrow">View our Safety Report and White Papers <span>→</span></a>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <h2 class="section-title">Our mission: Be the world's most trusted healthcare provider</h2>
+            <p class="mission-description">
+                At OtovoCare, we believe the status quo is not acceptable. Our mission is to innovate 
+                beyond the impossible in order to save lives that are tragically lost to preventable 
+                healthcare issues. We are driven to provide inclusive healthcare that offers freedom 
+                of access for all, working with our partners and communities to create an ecosystem 
+                that is sustainable, efficient, and audacious. We are passionate about improving the 
+                state of healthcare to make it better than we found it.
+            </p>
+            <div class="mission-links">
+                <a href="#" class="link-arrow">About our company <span>→</span></a>
+                <a href="#" class="link-arrow">Careers at OtovoCare <span>→</span></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2 class="newsletter-title">Sign up for updates to get the latest on OtovoCare, our technology, and where we're headed next.</h2>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                <button type="submit" class="btn-primary">Sign up</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Where We Operate</a></li>
+                        <li><a href="#">How It Works</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li><a href="#">Our Technology</a></li>
+                        <li><a href="#">Platform Overview</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">Our History</a></li>
+                        <li><a href="#">Latest Updates</a></li>
+                        <li><a href="#">Press Resources</a></li>
+                        <li><a href="#">Leadership</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Safety</h4>
+                    <ul>
+                        <li><a href="#">Safety at OtovoCare</a></li>
+                        <li><a href="#">Safety Research</a></li>
+                        <li><a href="#">Safety Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Community Voices</a></li>
+                        <li><a href="#">Community Partners</a></li>
+                        <li><a href="#">Community Impact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Careers</h4>
+                    <ul>
+                        <li><a href="#">Why OtovoCare</a></li>
+                        <li><a href="#">Working at OtovoCare</a></li>
+                        <li><a href="#">Teams</a></li>
+                        <li><a href="#">Open Roles</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="#">FAQ</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Legal</a>
+                    <a href="#">Contact Us</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2024 OtovoCare. All rights reserved.</p>
+                    <p class="footer-note">*Patient satisfaction is based on the percent of 4 & 5 star ratings to date.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
