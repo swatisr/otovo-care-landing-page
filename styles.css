@@ -326,12 +326,12 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     right: 64px;
     left: auto;
     width: auto;
-    padding: 16px 24px;
+    padding: 8px 12px; /* Reduced padding */
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(8px);
-    border-radius: 12px;
+    border-radius: 8px;
     z-index: 10;
-    font-size: 16px;
+    font-size: 13px; /* Reduced font size */
 }
 
 .trust-container {
@@ -343,11 +343,11 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 24px;
+    gap: 16px; /* Reduced gap */
 }
-.stars { color: #00b67a; letter-spacing: 2px; font-size: 16px; }
-.customer-count { color: #fff; font-size: 16px; letter-spacing: 0.14px; }
-.trustpilot-logo { display: flex; align-items: center; gap: 8px; color: #fff; font-size: 16px; }
+.stars { color: #00b67a; letter-spacing: 1px; font-size: 13px; }
+.customer-count { color: #fff; font-size: 13px; letter-spacing: 0.14px; }
+.trustpilot-logo { display: flex; align-items: center; gap: 4px; color: #fff; font-size: 13px; }
 
 /* Benefits Section */
 .benefits-section {
