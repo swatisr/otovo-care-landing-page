@@ -225,7 +225,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 .trust-content {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Left align */
+    justify-content: center; /* Center align */
     gap: 24px;
 }
 .stars { color: #00b67a; letter-spacing: 2px; }
