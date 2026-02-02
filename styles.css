@@ -126,18 +126,16 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     left: 0; 
     width: 100%; 
     height: var(--nav-height); 
-    background-color: rgba(255, 255, 255, 0.05); /* Frosted tint */
-    backdrop-filter: blur(12px); /* Gaussian blur */
-    -webkit-backdrop-filter: blur(12px);
+    background-color: transparent; 
     padding: 0 24px; 
     z-index: 1000; 
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+    border-bottom: none; 
     display: flex; 
     align-items: center; 
     transition: transform 0.3s ease, background-color 0.3s ease; 
 }
 .navbar.nav-hidden { transform: translateY(-100%); }
-.navbar.scrolled { background-color: rgba(255, 255, 255, 0.1); } /* Optional: slightly more opaque on scroll if visible */
+.navbar.scrolled { background-color: transparent; }
 .nav-container { max-width: 1440px; margin: 0 auto; width: 100%; display: flex; justify-content: space-between; align-items: center; position: relative; }
 .logo { text-decoration: none; display: flex; align-items: center; color: #ffffff; transition: color 0.3s ease; z-index: 2; }
 .logo-svg { height: 40px; width: auto; }
