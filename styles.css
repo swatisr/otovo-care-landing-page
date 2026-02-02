@@ -11,7 +11,7 @@
 .hero-title {
     font-family: var(--font-family); /* Poppins */
     font-size: 64px; /* Desktop Size */
-    font-weight: 400; /* Regular weight, no bold */
+    font-weight: 600; /* SemiBold for authority */
     line-height: 1.1;
     letter-spacing: -0.02em; /* Slight tightening for display */
     color: var(--text-white);
