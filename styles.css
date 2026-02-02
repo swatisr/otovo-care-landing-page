@@ -22,7 +22,6 @@ body {
     line-height: 1.5;
     background-color: #fff;
     -webkit-font-smoothing: antialiased;
-    /* No padding-top to ensure hero sits behind nav */
     padding-top: 0;
 }
 
@@ -64,17 +63,22 @@ body {
     display: flex;
     align-items: center;
     margin-right: 48px;
-    color: #ffffff; /* Default white */
+    color: #ffffff;
     transition: color 0.3s ease;
 }
 
-.navbar.scrolled .logo {
-    color: var(--primary-color);
+.logo-svg {
+    height: 40px; /* Adjusted size based on viewBox */
+    width: auto;
 }
 
-.logo-svg {
-    height: 24px;
-    fill: currentColor;
+.logo-path {
+    transition: fill 0.3s ease;
+}
+
+/* When scrolled, change white parts of logo to dark */
+.navbar.scrolled .logo-path {
+    fill: var(--primary-color);
 }
 
 .nav-menu {
@@ -104,7 +108,7 @@ body {
     color: var(--accent-color);
 }
 
-/* Hamburger Menu (from your screenshot) */
+/* Hamburger Menu */
 .hamburger-menu {
     display: flex;
     flex-direction: column;
@@ -137,8 +141,6 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    /* Negative margin to pull hero up behind fixed nav if needed, 
-       but standard fixed nav overlay works with padding-top:0 on body */
 }
 
 .hero-background {
@@ -189,7 +191,6 @@ body {
     padding-top: 60px;
 }
 
-/* ... Keeping other styles (Badge, Title, Description, CTA, Trust Bar) ... */
 .badge-container { margin-bottom: 32px; }
 .badge {
     display: inline-block;
@@ -223,12 +224,6 @@ body {
     max-width: 600px;
 }
 .hero-description p { margin-bottom: 16px; }
-.hero-features { list-style: none; margin-bottom: 24px; padding-left: 0; }
-.hero-features li { position: relative; padding-left: 24px; margin-bottom: 8px; }
-.hero-features li::before { content: "•"; position: absolute; left: 0; color: var(--text-muted); }
-
-.link-text { color: var(--text-muted); text-decoration: underline; font-size: 16px; }
-.link-text:hover { color: var(--text-white); }
 
 .cta-container { display: flex; flex-direction: column; gap: 12px; align-items: flex-start; }
 .btn-primary {
@@ -256,7 +251,7 @@ body {
 /* Responsive */
 @media (max-width: 768px) {
     .navbar { padding: 0 24px; }
-    .nav-menu { display: none; } /* Hide text links on mobile */
+    .nav-menu { display: none; } 
     .hero-container { padding: 0 24px; padding-top: var(--nav-height); }
     .hero-title { font-size: 36px; }
     .trust-bar { padding: 16px 24px; }
