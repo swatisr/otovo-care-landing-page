@@ -138,8 +138,18 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 
 /* Hero Section */
 .hero-section { position: relative; min-height: 100vh; width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; text-align: center; }
-.hero-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-.hero-image-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-image: url('public/image/unspash1.png'); background-size: cover; background-position: center; background-repeat: no-repeat; }
+.hero-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
 .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); }
 .hero-container { flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 0 24px; max-width: 900px; margin: 0 auto; width: 100%; padding-top: var(--nav-height); }
 .badge-container { margin-bottom: 24px; }
