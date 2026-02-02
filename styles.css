@@ -1,7 +1,7 @@
 /* Hero Typography & Hierarchy - Mill Style */
 
 .hero-content {
-    max-width: 640px; /* Increased width to match layout */
+    max-width: 800px; /* Increased width to allow title in 2 lines */
     padding-top: 0;
     display: flex;
     flex-direction: column;
@@ -11,7 +11,7 @@
 .hero-title {
     font-family: var(--font-family); /* Poppins */
     font-size: 64px; /* Desktop Size */
-    font-weight: 500; /* Regular/Medium */
+    font-weight: 700; /* Bold */
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: var(--text-white);
@@ -62,13 +62,13 @@
 
 .price-tag {
     color: var(--text-white);
-    background-color: rgba(255, 235, 139, 0.2); /* Subtle yellow tint background */
-    padding: 8px 12px;
-    border-radius: 6px;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
     font-family: var(--font-family);
     font-size: 14px;
     font-weight: 500;
-    backdrop-filter: blur(4px);
+    backdrop-filter: none;
 }
 
 /* Responsive Typography */
@@ -209,11 +209,12 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     right: 64px;
     left: auto;
     width: auto;
-    padding: 16px 24px;
+    padding: 8px 12px; /* Reduced padding by half */
     background: rgba(255, 255, 255, 0.1); /* Subtle background */
     backdrop-filter: blur(8px);
     border-radius: 8px;
     z-index: 10;
+    font-size: 13px; /* Reduced font size */
 }
 
 .trust-container {
@@ -227,9 +228,9 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     justify-content: center;
     gap: 16px;
 }
-.stars { color: #00b67a; letter-spacing: 2px; }
-.customer-count { color: #fff; font-size: 14px; letter-spacing: 0.14px; }
-.trustpilot-logo { display: flex; align-items: center; gap: 4px; color: #fff; }
+.stars { color: #00b67a; letter-spacing: 2px; font-size: 13px; }
+.customer-count { color: #fff; font-size: 13px; letter-spacing: 0.14px; }
+.trustpilot-logo { display: flex; align-items: center; gap: 4px; color: #fff; font-size: 13px; }
 
 /* Benefits Section */
 .benefits-section {
