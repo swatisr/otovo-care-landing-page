@@ -5,7 +5,7 @@
     padding-top: 0;
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Left align */
+    align-items: center; /* Center align */
 }
 
 .hero-title {
@@ -17,7 +17,7 @@
     color: var(--text-white);
     margin-bottom: 24px; /* Headline -> Paragraph spacing */
     text-shadow: none;
-    text-align: left; /* Left align */
+    text-align: center; /* Center align */
 }
 
 .hero-description {
@@ -28,7 +28,7 @@
     color: var(--text-white);
     max-width: 700px; /* Restrained width */
     margin-bottom: 32px; /* Paragraph -> CTA spacing */
-    text-align: left; /* Left align */
+    text-align: center; /* Center align */
     opacity: 0.9; /* Slight reduction for hierarchy */
 }
 
@@ -40,7 +40,7 @@
 .cta-container {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Left align */
+    align-items: center; /* Center align */
     gap: 12px; /* CTA -> Microcopy spacing */
     width: 100%;
 }
@@ -202,7 +202,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     display: inline-block;
     color: #FFEB8B;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: 400; /* Regular weight */
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -225,7 +225,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 .trust-content {
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* Left align */
+    justify-content: center; /* Center align */
     gap: 24px;
 }
 .stars { color: #00b67a; letter-spacing: 2px; }
