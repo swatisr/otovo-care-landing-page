@@ -330,7 +330,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 }
 
 .card-image-wrapper {
-    height: 300px; /* Taller image */
+    aspect-ratio: 3/4;
     width: 100%;
     overflow: hidden;
     border-radius: 12px; /* Rounded corners on image */
@@ -486,7 +486,4 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
         gap: 32px;
     }
     
-    .card-image-wrapper {
-        height: 180px;
-    }
 }
