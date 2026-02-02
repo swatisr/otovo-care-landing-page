@@ -9,7 +9,7 @@
 }
 
 .hero-title {
-    font-family: 'Playfair Display', serif; /* Elegant Serif */
+    font-family: var(--font-family); /* Poppins */
     font-size: 64px; /* Desktop Size */
     font-weight: 400; /* Regular weight, no bold */
     line-height: 1.1;
