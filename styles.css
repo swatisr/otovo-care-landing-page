@@ -1,7 +1,7 @@
 /* Hero Typography & Hierarchy - Mill Style */
 
 .hero-content {
-    max-width: 800px;
+    max-width: 380px;
     padding-top: 0;
     display: flex;
     flex-direction: column;
@@ -198,7 +198,14 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 }
 
 .badge-container { margin-bottom: 24px; }
-.badge { display: inline-block; background-color: var(--badge-bg); color: var(--primary-color); font-size: 12px; font-weight: 600; text-transform: uppercase; padding: 6px 14px; border-radius: 4px; letter-spacing: 0.5px; box-shadow: none; }
+.soly-label {
+    display: inline-block;
+    color: #FFEB8B;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 /* Trust Bar - Left Aligned */
 .trust-bar {
