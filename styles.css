@@ -1,7 +1,7 @@
 /* Hero Typography & Hierarchy - Mill Style */
 
 .hero-content {
-    max-width: 600px;
+    max-width: 640px; /* Increased width to match layout */
     padding-top: 0;
     display: flex;
     flex-direction: column;
@@ -10,38 +10,35 @@
 
 .hero-title {
     font-family: var(--font-family); /* Poppins */
-    font-size: 64px; /* Desktop Size: 56-64px */
-    font-weight: 500; /* Regular/Medium (No bold) */
-    line-height: 1.15;
-    letter-spacing: -0.02em; /* Slight tightening for display */
+    font-size: 64px; /* Desktop Size */
+    font-weight: 500; /* Regular/Medium */
+    line-height: 1.1;
+    letter-spacing: -0.02em;
     color: var(--text-white);
-    margin-bottom: 24px; /* Headline -> Paragraph spacing */
+    margin-bottom: 24px;
     text-shadow: none;
-    text-align: left; /* Left align */
+    text-align: left;
+    max-width: 100%;
 }
 
 .hero-description {
-    font-family: var(--font-family); /* Poppins/Sans-serif for body */
-    font-size: 18px; /* Desktop Size: 17-18px */
-    line-height: 1.6;
+    font-family: var(--font-family);
+    font-size: 18px;
+    line-height: 1.5;
     font-weight: 400;
     color: var(--text-white);
-    max-width: 480px; /* Max width: 420-480px */
-    margin-bottom: 32px; /* Paragraph -> CTA spacing */
-    text-align: left; /* Left align */
-    opacity: 0.9; /* Slight reduction for hierarchy */
+    max-width: 540px; /* Wider description */
+    margin-bottom: 32px;
+    text-align: left;
+    opacity: 0.9;
 }
 
-.hero-description p {
-    margin-bottom: 0;
-}
-
-/* CTA Container */
+/* CTA Container - Row Layout */
 .cta-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Left align */
-    gap: 12px; /* CTA -> Microcopy spacing */
+    flex-direction: row; /* Side by side */
+    align-items: center;
+    gap: 16px;
     width: 100%;
 }
 
@@ -50,30 +47,28 @@
     align-items: center;
     justify-content: center;
     gap: 8px;
+    background-color: #008060; /* Mill Green-ish or keep Otovo Orange? Keeping Otovo Orange for brand consistency unless requested otherwise. Image has green. Sticking to Otovo Orange. */
     background-color: var(--accent-color);
     color: var(--primary-color);
     font-family: var(--font-family);
-    font-weight: 600; /* Medium-SemiBold */
+    font-weight: 600;
     font-size: 16px;
-    padding: 16px 32px; /* Specific padding */
+    padding: 14px 28px;
     border-radius: 50px;
     text-decoration: none;
     transition: transform 0.2s, background-color 0.2s;
     box-shadow: none;
 }
 
-.btn-primary:hover {
-    transform: translateY(-2px);
-    background-color: #ff9b75;
-}
-
-.price-text {
+.price-tag {
     color: var(--text-white);
+    background-color: rgba(255, 235, 139, 0.2); /* Subtle yellow tint background */
+    padding: 8px 12px;
+    border-radius: 6px;
     font-family: var(--font-family);
     font-size: 14px;
-    line-height: 1.5;
-    opacity: 0.8; /* Reduced emphasis */
-    font-weight: 400;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
 }
 
 /* Responsive Typography */
