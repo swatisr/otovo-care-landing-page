@@ -1,7 +1,7 @@
 /* Hero Typography & Hierarchy - Mill Style */
 
 .hero-content {
-    max-width: 380px;
+    max-width: 700px;
     padding-top: 0;
     display: flex;
     flex-direction: column;
@@ -144,9 +144,9 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Left align */
+    align-items: center; /* Center align */
     overflow: hidden;
-    text-align: left; /* Left align text */
+    text-align: center; /* Center align text */
     margin: 0;
     padding: 0;
 }
@@ -178,7 +178,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.65); /* Increased opacity to dim video */
+    background-color: rgba(0, 0, 0, 0.65);
     z-index: 1;
 }
 
@@ -189,8 +189,8 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; /* Left align items */
-    padding: 0 64px; /* Maintain padding */
+    align-items: center; /* Center align items */
+    padding: 0 64px;
     max-width: 1440px;
     margin: 0 auto;
     width: 100%;
@@ -225,7 +225,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 .trust-content {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center align */
+    justify-content: flex-start; /* Left align */
     gap: 24px;
 }
 .stars { color: #00b67a; letter-spacing: 2px; }
@@ -285,7 +285,155 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     max-width: 90%;
 }
 
+/* Comparison Section */
+.comparison-section {
+    padding: 100px 24px;
+    background-color: #F9FAFB; /* Clean, bright background */
+    color: var(--primary-color);
+}
+
+.comparison-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.comparison-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 64px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 64px;
+}
+
+.comparison-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.comparison-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.card-image-wrapper {
+    height: 200px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.comparison-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.card-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--primary-color);
+}
+
+.card-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6B7280;
+    margin-bottom: 24px;
+    flex-grow: 1;
+}
+
+.card-checklist {
+    list-style: none;
+    margin-bottom: 24px;
+    padding: 0;
+}
+
+.card-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--primary-color);
+}
+
+.check-icon {
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.card-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 0.2s;
+    align-self: flex-start;
+}
+
+.card-link:hover {
+    border-bottom-color: var(--primary-color);
+}
+
+.comparison-cta-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    padding: 14px 32px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
 /* Responsive Styles */
+@media (max-width: 1024px) {
+    .comparison-grid {
+        gap: 24px;
+    }
+}
+
 @media (max-width: 768px) {
     .trust-bar { position: relative; background: #101932; }
     .trust-content { flex-wrap: wrap; }
@@ -308,5 +456,24 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     
     .benefit-description {
         max-width: 100%;
+    }
+
+    /* Comparison Section Mobile */
+    .comparison-section {
+        padding: 64px 24px;
+    }
+
+    .comparison-title {
+        font-size: 28px;
+        margin-bottom: 48px;
+    }
+
+    .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    
+    .card-image-wrapper {
+        height: 180px;
     }
 }
