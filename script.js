@@ -22,58 +22,139 @@ document.addEventListener('DOMContentLoaded', () => {
     const testimonials = [
         {
             quote: "Incredible experience! A skilled and helpful team. Highly recommended!",
-            author: "Enrico, Italy"
+            author: "Enrico, Italy",
+            country: "Italy"
         },
         {
             quote: "The advice from Otovo was excellent! Questions about technical and commercial matters were answered clearly and competently.",
-            author: "Toni, Germany"
+            author: "Toni, Germany",
+            country: "Germany"
         },
         {
             quote: "The process went smoothly from signing the contract to the installation of the solar panels. The installation date was perfectly timed.",
-            author: "Antonio, Norway"
+            author: "Antonio, Norway",
+            country: "Norway"
         },
         {
             quote: "We chose Otovo based on a recommendation, and they installed the panels and energy storage quickly and professionally.",
-            author: "Karolina, Poland"
+            author: "Karolina, Poland",
+            country: "Poland"
         },
         {
             quote: "Living on the Gulf Coast, having back up power available year round is a necessity. Otovo was here the next morning to resolve the issue.",
-            author: "Mark, US"
+            author: "Mark, US",
+            country: "US"
         },
         {
             quote: "The installation team was professional and efficient. They explained everything clearly and left the site clean.",
-            author: "Sarah, Spain"
+            author: "Sarah, Spain",
+            country: "Spain"
         }
     ];
 
     const quoteElement = document.getElementById('showcase-quote');
     const authorElement = document.getElementById('showcase-author');
+    const linkElement = document.getElementById('showcase-link');
     const navFlags = document.querySelectorAll('.nav-flag');
+    const metaElement = document.querySelector('.showcase-meta');
+
+    function updateTestimonial(index) {
+        const data = testimonials[index];
+        
+        // Add fade out class
+        quoteElement.classList.add('fade-out');
+        metaElement.classList.add('fade-out');
+        
+        setTimeout(() => {
+            // Update content
+            quoteElement.textContent = data.quote;
+            authorElement.textContent = data.author;
+            linkElement.textContent = `Read why customers in ${data.country} choose Otovo Care →`;
+            
+            // Remove fade out and add fade in
+            quoteElement.classList.remove('fade-out');
+            metaElement.classList.remove('fade-out');
+            quoteElement.classList.add('fade-in');
+            metaElement.classList.add('fade-in');
+            
+            // Clean up fade in class after animation
+            setTimeout(() => {
+                quoteElement.classList.remove('fade-in');
+                metaElement.classList.remove('fade-in');
+            }, 300);
+        }, 200);
+    }
 
     if (quoteElement && authorElement && navFlags.length > 0) {
         navFlags.forEach(flag => {
+            // Desktop Hover
+            flag.addEventListener('mouseenter', () => {
+                // Remove active class from all
+                navFlags.forEach(f => f.classList.remove('active'));
+                // Add active class to hovered
+                flag.classList.add('active');
+
+                const index = parseInt(flag.getAttribute('data-index'));
+                updateTestimonial(index);
+            });
+
+            // Mobile Tap / Click
             flag.addEventListener('click', () => {
                 // Remove active class from all
                 navFlags.forEach(f => f.classList.remove('active'));
                 // Add active class to clicked
                 flag.classList.add('active');
 
-                // Update content with fade effect
                 const index = parseInt(flag.getAttribute('data-index'));
-                const data = testimonials[index];
-
-                // Simple fade out/in effect
-                quoteElement.style.opacity = 0;
-                authorElement.style.opacity = 0;
-
-                setTimeout(() => {
-                    quoteElement.textContent = data.quote;
-                    authorElement.textContent = data.author;
-                    
-                    quoteElement.style.opacity = 1;
-                    authorElement.style.opacity = 1;
-                }, 200);
+                updateTestimonial(index);
             });
         });
+    }
+
+    // Service Options Section - Horizontal Scrolling
+    const serviceCardsContainer = document.getElementById('serviceCardsContainer');
+    const serviceNavLeft = document.getElementById('serviceNavLeft');
+    const serviceNavRight = document.getElementById('serviceNavRight');
+
+    if (serviceCardsContainer && serviceNavLeft && serviceNavRight) {
+        const scrollAmount = 400;
+
+        serviceNavLeft.addEventListener('click', () => {
+            serviceCardsContainer.scrollBy({
+                left: -scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        serviceNavRight.addEventListener('click', () => {
+            serviceCardsContainer.scrollBy({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        // Update arrow visibility based on scroll position
+        function updateNavButtons() {
+            const { scrollLeft, scrollWidth, clientWidth } = serviceCardsContainer;
+            
+            if (scrollLeft <= 0) {
+                serviceNavLeft.style.opacity = '0.3';
+                serviceNavLeft.style.pointerEvents = 'none';
+            } else {
+                serviceNavLeft.style.opacity = '1';
+                serviceNavLeft.style.pointerEvents = 'auto';
+            }
+
+            if (scrollLeft >= scrollWidth - clientWidth - 10) {
+                serviceNavRight.style.opacity = '0.3';
+                serviceNavRight.style.pointerEvents = 'none';
+            } else {
+                serviceNavRight.style.opacity = '1';
+                serviceNavRight.style.pointerEvents = 'auto';
+            }
+        }
+
+        serviceCardsContainer.addEventListener('scroll', updateNavButtons);
+        updateNavButtons(); // Initial check
     }
 });

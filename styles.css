@@ -292,6 +292,208 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 .customer-count { color: #fff; font-size: 13px; letter-spacing: 0.14px; }
 .trustpilot-logo { display: flex; align-items: center; gap: 4px; color: #fff; font-size: 13px; }
 
+/* Service Options Section */
+.service-options-section {
+    padding: 96px 64px;
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.service-options-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.service-options-header {
+    margin-bottom: 48px;
+    max-width: 800px;
+}
+
+.service-options-title {
+    font-family: var(--font-family);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+    margin-bottom: 24px;
+}
+
+.service-options-description {
+    font-family: var(--font-family);
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.service-link {
+    color: #1E40B4;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 2px;
+    transition: color 0.2s;
+}
+
+.service-link:hover {
+    color: #1e3a8a;
+}
+
+.service-options-description sup {
+    font-size: 0.7em;
+    vertical-align: super;
+    color: #6B7280;
+}
+
+.service-cards-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.service-cards-container {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: 8px;
+}
+
+.service-cards-container::-webkit-scrollbar {
+    display: none;
+}
+
+.service-card {
+    flex: 0 0 360px;
+    background-color: #fff;
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.service-card-title {
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+.service-card-description {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.service-card-description sup {
+    font-size: 0.7em;
+    vertical-align: super;
+    color: #6B7280;
+}
+
+.service-price {
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 500;
+    color: #6B7280;
+    margin-top: 8px;
+}
+
+.service-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #6B7280;
+    transition: background-color 0.2s, color 0.2s;
+    z-index: 10;
+}
+
+.service-nav-btn:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
+}
+
+.service-nav-left {
+    left: -20px;
+}
+
+.service-nav-right {
+    right: -20px;
+}
+
+/* Responsive Service Options Section */
+@media (max-width: 1024px) {
+    .service-options-section {
+        padding: 64px 32px;
+    }
+    
+    .service-options-title {
+        font-size: 36px;
+    }
+    
+    .service-nav-left {
+        left: -10px;
+    }
+    
+    .service-nav-right {
+        right: -10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-options-section {
+        padding: 64px 24px;
+    }
+    
+    .service-options-title {
+        font-size: 32px;
+    }
+    
+    .service-options-description {
+        font-size: 16px;
+    }
+    
+    .service-card {
+        flex: 0 0 300px;
+        padding: 24px;
+    }
+    
+    .service-nav-btn {
+        display: none;
+    }
+}
+
 /* Benefits Section */
 .benefits-section {
     padding: 100px 24px;
@@ -347,89 +549,88 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 
 /* Testimonial Showcase Section */
 .testimonial-showcase-section {
-    padding: 100px 24px;
-    background-color: #1B2438; /* Otovo Primary Dark Blue */
+    padding: 120px 24px;
+    background-color: #0056F5; /* Waymo-like bright blue to match screenshot */
     color: #fff;
-    text-align: center;
+    font-family: var(--font-family);
 }
 
 .showcase-container {
-    max-width: 1000px;
+    max-width: 800px; /* Tighter container */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 64px;
+    align-items: flex-start; /* Left align everything */
+    position: relative;
 }
 
 .showcase-header {
     width: 100%;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
 }
 
 .showcase-label {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     color: #fff;
-    margin: 0;
+    margin: 0 0 16px 0;
     text-align: left;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    opacity: 0.9;
-    margin-bottom: 16px;
+    letter-spacing: -0.01em;
 }
 
 .showcase-divider {
     width: 100%;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .testimonial-content {
-    max-width: 800px;
-    text-align: left;
     width: 100%;
-    display: flex;
-    align-items: flex-start;
-    gap: 24px;
+    position: relative;
+    padding-top: 16px;
 }
 
 .testimonial-text-wrapper {
-    flex: 1;
+    position: relative;
+    z-index: 2;
 }
 
 .quote-mark {
-    font-size: 80px;
-    line-height: 0.8;
-    font-family: serif;
+    font-size: 60px;
+    line-height: 1;
+    font-family: sans-serif; /* Geometric quote mark */
+    font-weight: 700;
     color: #fff;
-    opacity: 0.8;
+    margin-bottom: 24px;
     display: block;
-    margin-top: -10px; /* Slight optical adjustment */
 }
 
 .showcase-quote {
-    font-size: 36px;
+    font-size: 32px; /* Large readable text */
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.4;
     margin-bottom: 32px;
     color: #fff;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    max-width: 90%;
 }
 
 .showcase-meta {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 24px;
     align-items: flex-start;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .showcase-author {
-    font-size: 16px;
-    font-weight: 600;
+    font-family: monospace; /* Tech/SaaS feel like screenshot */
+    font-size: 14px;
+    font-weight: 500;
     color: #fff;
     margin: 0;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
 }
 
 .showcase-link {
@@ -438,47 +639,67 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     font-size: 15px;
     display: flex;
     align-items: center;
-    gap: 8px;
-    opacity: 0.8;
+    gap: 12px;
     transition: opacity 0.2s;
+    font-weight: 400;
 }
 
 .showcase-link:hover {
-    opacity: 1;
     text-decoration: underline;
+}
+
+.showcase-link::before {
+    content: '→';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    padding-bottom: 2px; /* Visual center adjustment */
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.showcase-link:hover::before {
+    background-color: #fff;
+    color: #0056F5;
 }
 
 /* Navigation Flags */
 .showcase-nav {
     display: flex;
-    gap: 16px;
-    margin-top: 32px;
-    justify-content: center;
+    gap: 12px;
+    margin-top: 80px; /* Space from content */
+    align-self: flex-start; /* Left align like content, or center? Screenshot has them centered relative to content? Looks centered under content block. */
+    margin-left: 0; 
 }
 
 .nav-flag {
-    width: 56px;
-    height: 56px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    border: none;
-    background-color: transparent;
-    font-size: 32px;
+    border: 2px solid transparent; /* Prepare for border */
+    background-color: rgba(255, 255, 255, 0.1);
+    font-size: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: all 0.2s;
     padding: 0;
-    position: relative;
 }
 
 .nav-flag:hover {
-    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
 }
 
 .nav-flag.active {
-    box-shadow: 0 0 0 3px #10B981; /* Green active ring */
-    transform: scale(1.1);
+    border-color: #00D68F; /* Bright teal/green ring */
+    background-color: transparent;
+    box-shadow: 0 0 0 2px #0056F5 inset; /* Gap effect */
 }
 
 /* Animation Classes */
@@ -494,14 +715,8 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 
 /* Responsive */
 @media (max-width: 768px) {
-    .testimonial-content {
-        flex-direction: column;
-        gap: 16px;
-    }
-    
-    .quote-mark {
-        margin-top: 0;
-        font-size: 64px;
+    .testimonial-showcase-section {
+        padding: 64px 24px;
     }
 
     .showcase-quote {
@@ -509,17 +724,8 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     }
     
     .showcase-nav {
-        flex-wrap: nowrap; /* Horizontal scroll on mobile */
-        overflow-x: auto;
-        justify-content: flex-start;
-        width: 100%;
-        padding-bottom: 16px;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-    }
-    
-    .showcase-nav::-webkit-scrollbar {
-        display: none;
+        margin-top: 48px;
+        flex-wrap: wrap;
     }
 }
 
