@@ -9,13 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const heroHeight = heroSection ? heroSection.offsetHeight : window.innerHeight;
         const triggerPoint = heroHeight - 100; // Show slightly before the end of hero section
         
-        if (scrollTop > triggerPoint) {
-            // Scrolled past hero: Hide main navbar, show floating navbar
+        // Main Navbar: Hide immediately when scrolling down
+        if (scrollTop > 50) {
             navbar.classList.add('nav-hidden');
+        } else {
+            navbar.classList.remove('nav-hidden');
+        }
+        
+        // Floating Navbar: Show only after passing the hero section
+        if (scrollTop > triggerPoint) {
             floatingNav.classList.add('visible');
         } else {
-            // In hero: Show main navbar, hide floating navbar
-            navbar.classList.remove('nav-hidden');
             floatingNav.classList.remove('visible');
         }
     });
