@@ -1,7 +1,7 @@
 /* Hero Typography & Hierarchy - Mill Style */
 
 .hero-content {
-    max-width: 728px;
+    max-width: 600px; /* Reduced by ~1/6th from 728px */
     padding-top: 0;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
     line-height: 1.6;
     font-weight: 400;
     color: var(--text-white);
-    max-width: 728px; /* Restrained width */
+    max-width: 600px; /* Restrained width */
     margin-bottom: 32px; /* Paragraph -> CTA spacing */
     text-align: left; /* Left align */
     opacity: 0.9; /* Slight reduction for hierarchy */
