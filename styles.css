@@ -330,11 +330,15 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 }
 
 .card-image-wrapper {
-    aspect-ratio: 3/4;
+    aspect-ratio: 3/4; /* Keep aspect ratio but scale down width via max-width or container padding */
     width: 100%;
+    /* To scale down the visual size by ~1/6th (approx 16-17%), we can add padding or reduce width */
+    /* Alternatively, adjust aspect ratio or height if "thumbnail size" refers to height */
+    /* Assuming user wants the image area smaller relative to the card */
+    max-width: 83.33%; /* 5/6th width */
+    margin: 0 auto 24px auto; /* Center image */
     overflow: hidden;
     border-radius: 12px; /* Rounded corners on image */
-    margin-bottom: 24px;
 }
 
 .card-image {
