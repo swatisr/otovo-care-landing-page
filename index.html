@@ -10,11 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar - Otovo.de Style -->
+    <!-- Navbar - Transparent on Hero -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <span class="logo-text">Otovo</span>
+                <!-- SVG Logo based on image: OTOVO with sunburst -->
+                <svg class="logo-svg" viewBox="0 0 120 30" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Text: OTOVO -->
+                    <path d="M15 15c0-8.3 6.7-15 15-15s15 6.7 15 15-6.7 15-15 15-15-6.7-15-15zm5 0c0 5.5 4.5 10 10 10s10-4.5 10-10-4.5-10-10-10-10 4.5-10 10zM50 2h5v26h-5V2zM75 2h18v5h-6.5v21h-5V7H75V2zM110 15c0-8.3 6.7-15 15-15s15 6.7 15 15-6.7 15-15 15-15-6.7-15-15zm5 0c0 5.5 4.5 10 10 10s10-4.5 10-10-4.5-10-10-10-10 4.5-10 10z" fill="currentColor"/>
+                    <!-- Sunburst accent (simplified) -->
+                    <path d="M38 22l-3 3M42 19l3 3M44 15h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <!-- Fallback text if SVG fails to render properly -->
+                <span style="font-weight:700; font-size:24px; margin-left:8px; display:none;">OTOVO</span>
             </a>
             
             <ul class="nav-menu">
@@ -23,12 +31,11 @@
                 <li><a href="#" class="nav-link">Über uns</a></li>
             </ul>
 
-            <div class="nav-cta-container">
-                <div class="address-input-wrapper">
-                    <input type="text" placeholder="Geben Sie Ihre Adresse ein!" class="address-input">
-                    <button class="address-submit-btn">→</button>
-                </div>
-            </div>
+            <button class="hamburger-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
         </div>
     </nav>
 
@@ -45,10 +52,10 @@
                     <span class="badge">FOR SOLY CUSTOMERS</span>
                 </div>
                 
-                <h1 class="hero-title">The world’s most trusted solar companion</h1>
+                <h1 class="hero-title">Support for your solar system, from Otovo</h1>
                 
                 <div class="hero-description">
-                    <p>We’re on a mission to be the most reliable partner for your energy journey. Making it safer, simpler, and more sustainable to manage your solar system—without the hassle.</p>
+                    <p>With Otovo Care, you can choose ongoing access to solar experts for questions, troubleshooting, and repairs related to your existing installation.</p>
                     
                     <ul class="hero-features">
                         <li>5 mins response time on phone</li>
