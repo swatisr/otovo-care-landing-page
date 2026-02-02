@@ -178,7 +178,7 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.65); /* Increased opacity to dim video */
     z-index: 1;
 }
 
@@ -225,9 +225,81 @@ body { font-family: var(--font-family); color: var(--primary-color); line-height
 .customer-count { color: #fff; font-size: 14px; letter-spacing: 0.14px; }
 .trustpilot-logo { display: flex; align-items: center; gap: 4px; color: #fff; }
 
-/* Responsive Trust Bar */
+/* Benefits Section */
+.benefits-section {
+    padding: 100px 24px;
+    background-color: #fff;
+    color: var(--primary-color);
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefits-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 64px;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+    row-gap: 64px;
+}
+
+.benefit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.benefit-icon {
+    margin-bottom: 24px;
+    color: var(--accent-color);
+}
+
+.benefit-heading {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.benefit-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4B5563; /* Muted text color for description */
+    max-width: 90%;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     .trust-bar { position: relative; background: #101932; }
     .trust-content { flex-wrap: wrap; }
     .nav-menu { display: none; }
+    
+    .benefits-section {
+        padding: 64px 24px;
+    }
+    
+    .benefits-title {
+        font-size: 28px;
+        margin-bottom: 48px;
+        text-align: left;
+    }
+    
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    
+    .benefit-description {
+        max-width: 100%;
+    }
 }
